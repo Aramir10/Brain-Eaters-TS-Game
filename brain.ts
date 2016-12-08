@@ -15,6 +15,12 @@ url:"zombie.gif",
 loadOk:false
  };
 
+ let taco=
+ {
+   url:"taco.jpg",
+   loadOk:false
+ }
+
  let  cantidad = aleatorio(1, 10);
 
  map.imagen = new Image();
@@ -24,6 +30,11 @@ loadOk:false
  zombie.imagen = new Image();
  zombie.imagen.src = zombie.url;
  zombie.imagen.addEventListener("load", loadZombie);
+
+ taco.imagen = new Image();
+ taco.imagen.src = taco.url;
+ taco.imagen.addEventListener("load", loadTaco);
+
 
  function loadMap()
  {
@@ -35,12 +46,24 @@ loadOk:false
    zombie.loadOk = true;
    dibujar();
  }
+ function loadTaco()
+ {
+   taco.loadOk = true;
+   dibujar();
+ }
+
+
 
  function dibujar()
  {
+
    if(map.loadOk)
    {
      context.drawImage(map.imagen, 0, 0);
+   }
+   if(taco.loadOk)
+   {
+     context.drawImage(map.imagen, 10, 10);
    }
    if(zombie.loadOk)
    {
@@ -49,9 +72,19 @@ loadOk:false
      {
        let x = aleatorio(0, 7);
        let y = aleatorio(0, 10);
-       let x = x * 60;
-       let y = y * 40;
+        x = x * 60;
+        y = y * 40;
        context.drawImage(zombie.imagen, x, y);
+
+     }
+     for(let v=0; v < cantidad; v++)
+     {
+       let x = aleatorio(0, 7);
+       let y = aleatorio(0, 10);
+        x = x * 60;
+        y = y * 40;
+      
+      context.drawImage(taco.imagen, x, y);
      }
    }
  }
