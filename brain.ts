@@ -17,11 +17,16 @@ loadOk:false
 
  let taco=
  {
-   url:"taco.jpg",
+   url:"taco.png",
    loadOk:false
  }
 
- let  cantidad = aleatorio(1, 10);
+
+//ramdom zombie and taco generator
+ let  cantidad = aleatorio(1, 3);
+ let  cantidad2 = aleatorio(1, 2);
+
+
 
  map.imagen = new Image();
  map.imagen.src = map.url;
@@ -35,6 +40,8 @@ loadOk:false
  taco.imagen.src = taco.url;
  taco.imagen.addEventListener("load", loadTaco);
 
+
+/// obje or gamecasting
 
  function loadMap()
  {
@@ -54,6 +61,8 @@ loadOk:false
 
 
 
+
+ // drawing imgs
  function dibujar()
  {
 
@@ -61,39 +70,39 @@ loadOk:false
    {
      context.drawImage(map.imagen, 0, 0);
    }
-   if(taco.loadOk)
-   {
-     context.drawImage(map.imagen, 10, 10);
-   }
+
    if(zombie.loadOk)
    {
      console.log(cantidad);
      for(let v=0; v < cantidad; v++)
      {
-       let x = aleatorio(0, 7);
+       let x = aleatorio(0, 10);
        let y = aleatorio(0, 10);
         x = x * 60;
         y = y * 40;
        context.drawImage(zombie.imagen, x, y);
 
      }
-     for(let v=0; v < cantidad; v++)
+     for(let v=0; v < cantidad2; v++)
      {
-       let x = aleatorio(0, 7);
-       let y = aleatorio(0, 10);
+       let x = aleatorio(3, 7);
+       let y = aleatorio(3, 10);
         x = x * 60;
         y = y * 40;
-      
+
       context.drawImage(taco.imagen, x, y);
      }
    }
  }
+
+
+///// random zombie and taco generator function
+
  function aleatorio(min, maxi)
  {
-   var resultado;
-   resultado = Math.floor(Math.random() * (maxi - min + 1)) + min;
-   return resultado;
- }
+
+   return Math.floor(Math.random() * (maxi - min + 1)) + min;
+
 
 //
 //  let img = new Image();

@@ -10,10 +10,11 @@ var zombie = {
     loadOk: false
 };
 var taco = {
-    url: "taco.jpg",
+    url: "taco.png",
     loadOk: false
 };
-var cantidad = aleatorio(1, 10);
+var cantidad = aleatorio(1, 3);
+var cantidad2 = aleatorio(1, 2);
 map.imagen = new Image();
 map.imagen.src = map.url;
 map.imagen.addEventListener("load", loadMap);
@@ -39,21 +40,18 @@ function dibujar() {
     if (map.loadOk) {
         context.drawImage(map.imagen, 0, 0);
     }
-    if (taco.loadOk) {
-        context.drawImage(map.imagen, 10, 10);
-    }
     if (zombie.loadOk) {
         console.log(cantidad);
         for (var v = 0; v < cantidad; v++) {
-            var x = aleatorio(0, 7);
+            var x = aleatorio(0, 10);
             var y = aleatorio(0, 10);
             x = x * 60;
             y = y * 40;
             context.drawImage(zombie.imagen, x, y);
         }
-        for (var v = 0; v < cantidad; v++) {
-            var x = aleatorio(0, 7);
-            var y = aleatorio(0, 10);
+        for (var v = 0; v < cantidad2; v++) {
+            var x = aleatorio(3, 7);
+            var y = aleatorio(3, 10);
             x = x * 60;
             y = y * 40;
             context.drawImage(taco.imagen, x, y);
@@ -61,7 +59,5 @@ function dibujar() {
     }
 }
 function aleatorio(min, maxi) {
-    var resultado;
-    resultado = Math.floor(Math.random() * (maxi - min + 1)) + min;
-    return resultado;
+    return Math.floor(Math.random() * (maxi - min + 1)) + min;
 }
