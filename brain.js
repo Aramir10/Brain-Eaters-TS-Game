@@ -13,6 +13,10 @@ var taco = {
     url: "taco.png",
     loadOk: false
 };
+var hero = {
+    url: "hero.png",
+    loadOK: false
+};
 var cantidad = aleatorio(1, 3);
 var cantidad2 = aleatorio(1, 2);
 map.imagen = new Image();
@@ -24,6 +28,9 @@ zombie.imagen.addEventListener("load", loadZombie);
 taco.imagen = new Image();
 taco.imagen.src = taco.url;
 taco.imagen.addEventListener("load", loadTaco);
+hero.imagen = new Image();
+hero.imagen.src = hero.url;
+hero.imagen.addEventListener("load", loadHero);
 function loadMap() {
     map.loadOk = true;
     dibujar();
@@ -36,9 +43,14 @@ function loadTaco() {
     taco.loadOk = true;
     dibujar();
 }
+function loadHero() {
+    hero.loadOk = true;
+    dibujar();
+}
 function dibujar() {
     if (map.loadOk) {
         context.drawImage(map.imagen, 0, 0);
+        context.drawImage(hero.imagen, 10, 10);
     }
     if (zombie.loadOk) {
         console.log(cantidad);

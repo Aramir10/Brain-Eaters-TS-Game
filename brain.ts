@@ -1,6 +1,8 @@
+
 let canvas = <HTMLCanvasElement>document.getElementById('myCanvas');
  let context = canvas.getContext("2d");
  console.log(context);
+
 
  let map =
 {
@@ -19,6 +21,12 @@ loadOk:false
  {
    url:"taco.png",
    loadOk:false
+ }
+
+ let hero =
+ {
+   url:"hero.png",
+   loadOK:false
  }
 
 
@@ -40,6 +48,10 @@ loadOk:false
  taco.imagen.src = taco.url;
  taco.imagen.addEventListener("load", loadTaco);
 
+ hero.imagen = new Image();
+ hero.imagen.src = hero.url;
+ hero.imagen.addEventListener("load", loadHero);
+
 
 /// obje or gamecasting
 
@@ -58,6 +70,12 @@ loadOk:false
    taco.loadOk = true;
    dibujar();
  }
+ function loadHero()
+ {
+   hero.loadOk = true;
+
+   dibujar();
+ }
 
 
 
@@ -69,7 +87,9 @@ loadOk:false
    if(map.loadOk)
    {
      context.drawImage(map.imagen, 0, 0);
+     context.drawImage(hero.imagen, 10, 10);
    }
+
 
    if(zombie.loadOk)
    {
@@ -102,16 +122,4 @@ loadOk:false
  {
 
    return Math.floor(Math.random() * (maxi - min + 1)) + min;
-
-
-//
-//  let img = new Image();
-// // random tacos!!!
-//
-//  img.src = "zombie.gif";
-// canvas.img = new Image();
-// canvas.img.src = canvas.url;
-//  // when all images loaded, start drawing
-//  window.addEventListener('load', (load_backG) => {
-// 		 context.drawImage(img, 0, 0);
-//  });
+}
