@@ -45,6 +45,7 @@ function loadTaco() {
 }
 function loadHero() {
     hero.loadOk = true;
+    moveHero.loadOk = true;
     dibujar();
 }
 function dibujar() {
@@ -67,6 +68,9 @@ function dibujar() {
             x = x * 60;
             y = y * 40;
             context.drawImage(taco.imagen, x, y);
+        }
+        if (moveHero.loadOk == true) {
+            context.drawImage(moveHero.imagen, moveX, moveY);
         }
     }
 }

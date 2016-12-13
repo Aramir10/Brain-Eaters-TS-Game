@@ -73,9 +73,11 @@ loadOk:false
  function loadHero()
  {
    hero.loadOk = true;
+   moveHero.loadOk =true;
 
    dibujar();
  }
+
 
 
 
@@ -111,6 +113,13 @@ loadOk:false
         y = y * 40;
 
       context.drawImage(taco.imagen, x, y);
+     }
+
+
+     ////////////////
+     if(moveHero.loadOk == true)
+     {
+     context.drawImage(moveHero.imagen, moveX, moveY);
      }
    }
  }
