@@ -5,7 +5,7 @@ let moveY = 50;
 
 
 
-document.addEventListener("keydown", heroMove);
+document.addEventListener("keyup", heroMove);
 
 let moveHero = {
 
@@ -20,12 +20,12 @@ console.log(hero);
 
 let arrowMove = {
 
-  UP : 38,
-  DOWN : 40,
-  LEFT : 37,
-  RIGTH : 39
+  UP: 38,
+  DOWN: 40,
+  LEFT: 37,
+  RIGHT: 39
 
-}
+};
 
 function heroMove(event)
 
@@ -35,50 +35,41 @@ function heroMove(event)
 
      console.log(event);
 
-     switch (event.keyCode) {
+     switch (event.keyCode)
+
+     {
 
        case arrowMove.UP:
-
          moveY = moveY - mov;
-
-         dibujar(moveX, moveY);
-
+         context.drawImage(hero.imagen, moveX, moveY)
+         dibujar(moveHero, moveX, moveY);
          console.log("up");
-
-       break;
+         break;
 
        case arrowMove.DOWN:
-
           moveY = moveY + mov;
-
-          dibujar(moveX, moveY);
-
+          context.drawImage(hero.imagen, moveX, moveY)
+          dibujar(moveHero, moveX, moveY);
           console.log("down");
-
-       break;
+          break;
 
        case arrowMove.LEFT:
-
           moveX = moveX - mov;
-
-          dibujar(moveX, moveY);
-
+          context.drawImage(hero.imagen, moveX, moveY)
+          dibujar(moveHero, moveX, moveY);
           console.log("left");
-
-       break;
+          break;
 
        case arrowMove.RIGHT:
-
           moveX = moveX + mov;
-
-          dibujar(moveX, moveY);
-
+          context.drawImage(hero.imagen, moveX, moveY)
+          dibujar(moveHero, moveX, moveY);
           console.log("right");
+          break;
 
-       break;
 
-       default:
 
+          default:
           alert ("use the arrows onnly ");
 
        break;
@@ -86,4 +77,3 @@ function heroMove(event)
      }
 
   }
-	heroMove();

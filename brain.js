@@ -51,7 +51,6 @@ function loadHero() {
 function dibujar() {
     if (map.loadOk) {
         context.drawImage(map.imagen, 0, 0);
-        context.drawImage(hero.imagen, 10, 10);
     }
     if (zombie.loadOk) {
         console.log(cantidad);
@@ -70,7 +69,7 @@ function dibujar() {
             context.drawImage(taco.imagen, x, y);
         }
         if (moveHero.loadOk == true) {
-            context.drawImage(moveHero.imagen, moveX, moveY);
+            context.drawImage(hero.imagen, moveX, moveY);
         }
     }
 }

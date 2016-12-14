@@ -89,7 +89,7 @@ loadOk:false
    if(map.loadOk)
    {
      context.drawImage(map.imagen, 0, 0);
-     context.drawImage(hero.imagen, 10, 10);
+    
    }
 
 
@@ -119,7 +119,7 @@ loadOk:false
      ////////////////
      if(moveHero.loadOk == true)
      {
-     context.drawImage(moveHero.imagen, moveX, moveY);
+     context.drawImage(hero.imagen, moveX, moveY);
      }
    }
  }

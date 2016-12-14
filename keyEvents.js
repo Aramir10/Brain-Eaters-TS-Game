@@ -1,6 +1,6 @@
 var moveX = 50;
 var moveY = 50;
-document.addEventListener("keydown", heroMove);
+document.addEventListener("keyup", heroMove);
 var moveHero = {
     url: "hero.png",
     loadOk: false
@@ -10,7 +10,7 @@ var arrowMove = {
     UP: 38,
     DOWN: 40,
     LEFT: 37,
-    RIGTH: 39
+    RIGHT: 39
 };
 function heroMove(event) {
     var mov = 20;
@@ -18,22 +18,26 @@ function heroMove(event) {
     switch (event.keyCode) {
         case arrowMove.UP:
             moveY = moveY - mov;
-            dibujar(moveX, moveY);
+            context.drawImage(hero.imagen, moveX, moveY);
+            dibujar(moveHero, moveX, moveY);
             console.log("up");
             break;
         case arrowMove.DOWN:
             moveY = moveY + mov;
-            dibujar(moveX, moveY);
+            context.drawImage(hero.imagen, moveX, moveY);
+            dibujar(moveHero, moveX, moveY);
             console.log("down");
             break;
         case arrowMove.LEFT:
             moveX = moveX - mov;
-            dibujar(moveX, moveY);
+            context.drawImage(hero.imagen, moveX, moveY);
+            dibujar(moveHero, moveX, moveY);
             console.log("left");
             break;
         case arrowMove.RIGHT:
             moveX = moveX + mov;
-            dibujar(moveX, moveY);
+            context.drawImage(hero.imagen, moveX, moveY);
+            dibujar(moveHero, moveX, moveY);
             console.log("right");
             break;
         default:
@@ -41,4 +45,3 @@ function heroMove(event) {
             break;
     }
 }
-heroMove();
