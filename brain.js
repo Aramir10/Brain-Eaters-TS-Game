@@ -17,8 +17,8 @@ var hero = {
     url: "hero.png",
     loadOK: false
 };
-var cantidad = aleatorio(1, 3);
-var cantidad2 = aleatorio(1, 2);
+var cantidad = aleatorio(1, 2);
+var cantidad2 = aleatorio(1, 3);
 map.imagen = new Image();
 map.imagen.src = map.url;
 map.imagen.addEventListener("load", loadMap);
@@ -55,8 +55,8 @@ function dibujar() {
     if (zombie.loadOk) {
         console.log(cantidad);
         for (var v = 0; v < cantidad; v++) {
-            var x = aleatorio(0, 10);
-            var y = aleatorio(0, 10);
+            var x = aleatorio(4, 10);
+            var y = aleatorio(4, 10);
             x = x * 60;
             y = y * 40;
             context.drawImage(zombie.imagen, x, y);

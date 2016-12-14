@@ -31,8 +31,8 @@ loadOk:false
 
 
 //ramdom zombie and taco generator
- let  cantidad = aleatorio(1, 3);
- let  cantidad2 = aleatorio(1, 2);
+ let  cantidad = aleatorio(1, 2);
+ let  cantidad2 = aleatorio(1, 3);
 
 
 
@@ -74,12 +74,8 @@ loadOk:false
  {
    hero.loadOk = true;
    moveHero.loadOk =true;
-
    dibujar();
  }
-
-
-
 
 
  // drawing imgs
@@ -89,22 +85,20 @@ loadOk:false
    if(map.loadOk)
    {
      context.drawImage(map.imagen, 0, 0);
-    
    }
-
 
    if(zombie.loadOk)
    {
      console.log(cantidad);
      for(let v=0; v < cantidad; v++)
      {
-       let x = aleatorio(0, 10);
-       let y = aleatorio(0, 10);
+       let x = aleatorio(4, 10);
+       let y = aleatorio(4, 10);
         x = x * 60;
         y = y * 40;
        context.drawImage(zombie.imagen, x, y);
-
      }
+
      for(let v=0; v < cantidad2; v++)
      {
        let x = aleatorio(3, 7);
@@ -114,9 +108,7 @@ loadOk:false
 
       context.drawImage(taco.imagen, x, y);
      }
-
-
-     ////////////////
+     //////////////// comented this
      if(moveHero.loadOk == true)
      {
      context.drawImage(hero.imagen, moveX, moveY);
