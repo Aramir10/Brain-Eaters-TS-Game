@@ -3,19 +3,23 @@ var context = canvas.getContext("2d");
 console.log(context);
 var map = {
     url: "tile.png",
-    loadOk: false
+    loadOk: false,
+    imagen: map
 };
 var zombie = {
     url: "zombie.gif",
-    loadOk: false
+    loadOk: false,
+    imagen: zombie
 };
 var taco = {
     url: "taco.png",
-    loadOk: false
+    loadOk: false,
+    imagen: taco
 };
 var hero = {
     url: "hero.png",
-    loadOK: false
+    loadOK: false,
+    imagen: hero
 };
 var cantidad = aleatorio(1, 2);
 var cantidad2 = aleatorio(1, 3);
@@ -68,9 +72,9 @@ function dibujar() {
             y = y * 40;
             context.drawImage(taco.imagen, x, y);
         }
-        if (moveHero.loadOk == true) {
-            context.drawImage(hero.imagen, moveX, moveY);
-        }
+    }
+    if (moveHero.loadOk == true) {
+        context.drawImage(hero.imagen, moveX, moveY);
     }
 }
 function aleatorio(min, maxi) {

@@ -7,6 +7,7 @@ let moveHero =
     {
         url: "hero.png",
         loadOk: false
+
     }
 console.log(hero);
 
@@ -17,8 +18,10 @@ let arrowMove =
         LEFT: 37,
         RIGHT: 39
     };
+    
 
 function heroMove(event) {
+
     let mov = 20;
     console.log(event);
     switch (event.keyCode) {

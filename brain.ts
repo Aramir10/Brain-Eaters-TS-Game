@@ -7,26 +7,30 @@ let canvas = <HTMLCanvasElement>document.getElementById('myCanvas');
  let map =
 {
  url: "tile.png",
- loadOk:false
+ loadOk:false,
+ imagen:map
 }
  // get zombie image
 
  let zombie=
  {
 url:"zombie.gif",
-loadOk:false
+  loadOk:false,
+ imagen:zombie
  };
 
  let taco=
  {
    url:"taco.png",
-   loadOk:false
+   loadOk:false,
+   imagen:taco
  }
 
  let hero =
  {
    url:"hero.png",
-   loadOK:false
+   loadOK:false,
+   imagen:hero
  }
 
 
@@ -97,6 +101,8 @@ loadOk:false
         x = x * 60;
         y = y * 40;
        context.drawImage(zombie.imagen, x, y);
+
+
      }
 
      for(let v=0; v < cantidad2; v++)
@@ -107,14 +113,24 @@ loadOk:false
         y = y * 40;
 
       context.drawImage(taco.imagen, x, y);
-     }
+    }
      //////////////// comented this
-     if(moveHero.loadOk == true)
-     {
-     context.drawImage(hero.imagen, moveX, moveY);
-     }
-   }
+
+        }
+
+        if(moveHero.loadOk == true)
+        {
+        context.drawImage(hero.imagen, moveX, moveY);
+        }
  }
+
+ // function zombieWalk(){
+ //   for (let i=40 ; i < 900; i++){
+ //   setInterval(context.drawImage(zombie, i,450),5000);
+ //
+ // }
+ // }
+ // zombieWalk();
 
 
 ///// random zombie and taco generator function
